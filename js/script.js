@@ -2,7 +2,7 @@ let data = [];
 let current = null;
 
 window.onload = async function () {
-  const res = await fetch("data.json");
+  const res = await fetch("data/example.json");
   data = await res.json();
   nextQuestion();
 };

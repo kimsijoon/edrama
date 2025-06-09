@@ -3,31 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('service-worker.js');
     }
   </script>
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 1em;
-      max-width: 500px;
-      margin: auto;
-      text-align: center;
-    }
-    input, button {
-      padding: 10px;
-      font-size: 16px;
-      margin: 10px;
-      width: 80%;
-    }
-    #result {
-      margin-top: 1em;
-      font-weight: bold;
-    }
-  </style>
 </head>
 <body>
   <h1>영어 단어 연습</h1>
@@ -38,6 +20,6 @@
     <p id="result"></p>
     <button onclick="nextQuestion()">다음 문제</button>
   </div>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
