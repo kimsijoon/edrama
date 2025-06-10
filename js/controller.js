@@ -30,7 +30,7 @@ function nextQuestion() {
   answer.value = "";
   answer.focus()
   correct.innerText = "";
-  correct.style.dislpay = "none";
+  correct.style.display = "none";
   isAnswerStage = true;
 }
 
@@ -45,7 +45,7 @@ function checkAnswer() {
     question.style.backgroundColor = "#7fd23b"
   } else {
     question.style.backgroundColor = "#e23f3b"
-    correct.style.dislpay = "flex";
+    correct.style.display = "flex";
     correct.innerText = correctAnswer;
   }
   isAnswerStage = false
