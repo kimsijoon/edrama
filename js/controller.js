@@ -15,17 +15,24 @@ document.getElementById("answer").addEventListener("keydown", function(event) {
 });
 
 function nextQuestion() {
+  question = document.getElementById("question");
+  answer = document.getElementById("answer");
   current = data[Math.floor(Math.random() * data.length)];
-  document.getElementById("question").innerText = current.kr
-  document.getElementById("answer").value = "";
+
+  question.innerText = current.kr
+  answer.value = "";
+  answer.focus()
 }
 
 function checkAnswer() {
-  const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+  question = document.getElementById("question");
+  answer = document.getElementById("answer");
+
+  const userAnswer = answer.value.trim().toLowerCase();
   const correct = current.en.toLowerCase();
   if (userAnswer === correct) {
-    document.getElementById("question").background_color = #22ad22
+    question.background_color = #22ad22
   } else {
-    document.getElementById("question").background_color = #ad2222
+    question.background_color = #ad2222
   }
 }
