@@ -1,5 +1,5 @@
 let data = [];
-let current = null;
+let question = null;
 let isAnswerStage = true;
 
 window.onload = async function () {
@@ -23,9 +23,9 @@ function nextQuestion() {
   const question = document.getElementById("question");
   const answer = document.getElementById("answer");
   const correct = document.getElementById("correct");
-  current = data[Math.floor(Math.random() * data.length)];
+  question = data[Math.floor(Math.random() * data.length)];
 
-  question.innerText = current.kr
+  question.innerText = question.kr
   question.style.backgroundColor = "#484848"
   answer.value = "";
   answer.focus()
@@ -40,12 +40,12 @@ function checkAnswer() {
   const correct = document.getElementById("correct");
 
   const userAnswer = answer.value.trim().toLowerCase();
-  const correctAnswer = current.en.toLowerCase();
+  const correctAnswer = question.en.toLowerCase();
   if (userAnswer === correctAnswer) {
     question.style.backgroundColor = "#7fd23b"
   } else {
     question.style.backgroundColor = "#e23f3b"
-    correct.style.display = "flex";
+    correct.style.display = "block";
     correct.innerText = correctAnswer;
   }
   isAnswerStage = false
