@@ -12,6 +12,8 @@ html, body {
   overflow: hidden;
   box-sizing: border-box;
   background-color: var(--color-bg);
+  position: fixed;
+  touch-action: none;
   font-family:
     -apple-system,     
     BlinkMacSystemFont,
