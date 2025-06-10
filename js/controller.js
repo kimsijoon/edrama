@@ -10,7 +10,7 @@ window.onload = async function () {
 document.getElementById("answer").addEventListener("keydown", function(event) {
   if (event.key === "Enter") {
     event.preventDefault(); 
-    document.getElementById("answer").innerText = "Enter!";
+    checkAnswer();
   }
 });
 
@@ -24,8 +24,8 @@ function checkAnswer() {
   const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
   const correct = current.en.toLowerCase();
   if (userAnswer === correct) {
-    document.getElementById("result").innerText = "✅ 정답입니다!";
+    document.getElementById("question").background_color = #22ad22
   } else {
-    document.getElementById("result").innerText = `❌ 오답입니다. 정답: ${current.en}`;
+    document.getElementById("question").background_color = #ad2222
   }
 }
