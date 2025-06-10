@@ -15,8 +15,8 @@ document.getElementById("answer").addEventListener("keydown", function(event) {
 });
 
 function nextQuestion() {
-  question = document.getElementById("question");
-  answer = document.getElementById("answer");
+  const question = document.getElementById("question");
+  const answer = document.getElementById("answer");
   current = data[Math.floor(Math.random() * data.length)];
 
   question.innerText = current.kr
@@ -25,14 +25,14 @@ function nextQuestion() {
 }
 
 function checkAnswer() {
-  question = document.getElementById("question");
-  answer = document.getElementById("answer");
+  const question = document.getElementById("question");
+  const answer = document.getElementById("answer");
 
   const userAnswer = answer.value.trim().toLowerCase();
   const correct = current.en.toLowerCase();
   if (userAnswer === correct) {
-    question.background_color = #22ad22
+    question.background_color = #7fd23b
   } else {
-    question.background_color = #ad2222
+    question.background_color = #e23f3b
   }
 }
