@@ -1,5 +1,6 @@
 let data = [];
 let current = null;
+let isAnswerStage = true;
 
 window.onload = async function () {
   const res = await fetch("data/example.json");
@@ -10,7 +11,11 @@ window.onload = async function () {
 document.getElementById("answer").addEventListener("keydown", function(event) {
   if (event.key === "Enter") {
     event.preventDefault(); 
-    checkAnswer();
+    if (isAnswerStage) {
+      checkAnswer();
+    } else {
+      nextQuestion();
+    }
   }
 });
 
@@ -22,6 +27,7 @@ function nextQuestion() {
   question.innerText = current.kr
   answer.value = "";
   answer.focus()
+  isAnswerStage = true;
 }
 
 function checkAnswer() {
@@ -35,4 +41,5 @@ function checkAnswer() {
   } else {
     question.style.backgroundColor = "#e23f3b"
   }
+  isAnswerStage = false
 }
