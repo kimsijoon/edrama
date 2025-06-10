@@ -31,8 +31,8 @@ function checkAnswer() {
   const userAnswer = answer.value.trim().toLowerCase();
   const correct = current.en.toLowerCase();
   if (userAnswer === correct) {
-    question.background_color = #7fd23b
+    question.style.backgroundColor = "#7fd23b"
   } else {
-    question.background_color = #e23f3b
+    question.style.backgroundColor = "#e23f3b"
   }
 }
