@@ -25,6 +25,7 @@ function nextQuestion() {
   current = data[Math.floor(Math.random() * data.length)];
 
   question.innerText = current.kr
+  question.style.backgroundColor = "#484848"
   answer.value = "";
   answer.focus()
   isAnswerStage = true;
