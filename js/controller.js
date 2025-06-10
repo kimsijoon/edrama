@@ -22,25 +22,31 @@ document.getElementById("answer").addEventListener("keydown", function(event) {
 function nextQuestion() {
   const question = document.getElementById("question");
   const answer = document.getElementById("answer");
+  const correct = document.getElementById("correct");
   current = data[Math.floor(Math.random() * data.length)];
 
   question.innerText = current.kr
   question.style.backgroundColor = "#484848"
   answer.value = "";
   answer.focus()
+  correct.innerText = "";
+  correct.style.dislpay = "none";
   isAnswerStage = true;
 }
 
 function checkAnswer() {
   const question = document.getElementById("question");
   const answer = document.getElementById("answer");
+  const correct = document.getElementById("correct");
 
   const userAnswer = answer.value.trim().toLowerCase();
-  const correct = current.en.toLowerCase();
-  if (userAnswer === correct) {
+  const correctAnswer = current.en.toLowerCase();
+  if (userAnswer === correctAnswer) {
     question.style.backgroundColor = "#7fd23b"
   } else {
     question.style.backgroundColor = "#e23f3b"
+    correct.style.dislpay = "flex";
+    correct.innerText = correctAnswer;
   }
   isAnswerStage = false
 }
